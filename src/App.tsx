@@ -1,29 +1,30 @@
-import Home from "./pages/home/Home";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Users from "./pages/Users/Users";
-import Products from "./pages/products/Product";
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer"
 
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import "./styles/global.scss";
+import Home from "./pages/home/Home";
+import Products from "./pages/products/Products";
+import Users from "./pages/users/Users";
 import Login from "./pages/login/Login";
+import Navbar from "./components/Navbar/Navbar";
 import Menu from "./components/menu/Menu";
+import Footer from "./components/footer/Footer";
 
 
 function App() {
   const Layout = () => {
     return (
       <div className="main">
-        <Navbar />
-        <div className="container">
-          <div className="menuContainer">
-          <Menu/>
-          </div>
-          <div className="contentContainer">
-          <Outlet/>
-          </div>
-        </div>
-        <Footer />
+      <Navbar/>
+      <div className="container">
+       <div className="menuContainer">
+       <Menu/>
+       </div>
+       <div className="contentcontainer">
+       <Outlet/>
+       </div>
+
+      </div>
+      <Footer/>
       </div>
     );
   };
@@ -35,7 +36,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element:<Home/>
         },
         {
           path: "/users",
@@ -43,7 +44,7 @@ function App() {
         },
         {
           path: "/products",
-          element: <Products />,
+          element:<Products/>
         },
       ],
     },
@@ -55,5 +56,5 @@ function App() {
 
   return <RouterProvider router={router} />;
 }
-
 export default App;
+

@@ -1,5 +1,5 @@
-import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
-import "./pieChartBox.scss";
+import { PieChart, Pie, Tooltip, Cell, ResponsiveContainer } from 'recharts';
+import './PieChartBox.scss';
 
 const data = [
   { name: "Mobile", value: 400, color: "#0088FE" },
@@ -8,43 +8,35 @@ const data = [
   { name: "Tablet", value: 200, color: "#FF8042" },
 ];
 
-const PieChartBox = () => {
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+
+const MyPieChart = () => {
   return (
-    <div className="pieChartBox">
-      <h1>Leads by Source</h1>
+    <div className="charts">
+      <span>Leads By Source</span>
       <div className="chart">
-        <ResponsiveContainer width="99%" height={300}>
-          <PieChart>
-            <Tooltip
-              contentStyle={{ background: "white", borderRadius: "5px" }}
-            />
+        <ResponsiveContainer width="99%" height="100%">
+          <PieChart width={800} height={300}>
             <Pie
               data={data}
-              innerRadius={"70%"}
-              outerRadius={"90%"}
+              cx={400}
+              cy={150}
+              innerRadius={60}
+              outerRadius={80}
+              fill="#8884d8"
               paddingAngle={5}
               dataKey="value"
             >
-              {data.map((item) => (
-                <Cell key={item.name} fill={item.color} />
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
+           
           </PieChart>
         </ResponsiveContainer>
-      </div>
-      <div className="options">
-        {data.map((item) => (
-          <div className="option" key={item.name}>
-            <div className="title">
-              <div className="dot" style={{ backgroundColor: item.color }} />
-              <span>{item.name}</span>
-            </div>
-            <span>{item.value}</span>
-          </div>
-        ))}
       </div>
     </div>
   );
 };
 
-export default PieChartBox;
+export default MyPieChart;

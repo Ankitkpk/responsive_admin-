@@ -1,28 +1,54 @@
-@use '../../styles/variable.scss' as variable;
-
 .menu {
-    margin-bottom:20px;
-    .item {
-      display: flex; 
-      flex-direction: column;
-      padding:10px;
-      gap:10px;
-      .title{
-        font-weight:200;
-        font-size:12px;
-        color:variable.$soft-color;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    padding:10px;
+    padding-left:20px;
+    padding-right:40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  }
 
-      }
-      .listItemTitle
-      {
+  
+  .menutitle {
+    font-size: 12px;
+    font-weight: bold;
+    color: #acacac;
+    margin-bottom: 10px;
+  }
+  
+  .menu_options {
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    margin-top:10px;
+  
+    span {
+      color: aliceblue;
+    }
+  
+    li {
+      margin: 12px 8px; /* Increased space between list items */
+      display: flex;
+      align-items: center;
+  
+      a {
+        text-decoration: none;
+        color: #555;
+        font-size: 16px;
         display: flex;
-        gap:9px;
-        padding:6px;
-        &:hover{
-            background-color:variable.$soft-bg;
+        align-items: center;
+  
+        img {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+          object-fit: cover;
+        }
+  
+        &:hover {
+          color: #007bff;
         }
       }
     }
-    
   }
   

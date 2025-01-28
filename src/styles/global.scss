@@ -19,6 +19,7 @@ a {
 
 .container {
   display: flex;
+ 
 }
 
 .menuContainer {
@@ -27,7 +28,8 @@ a {
   border-right: 2px solid variable.$soft-bg;
 }
 
-.contentContainer {
+.contentcontainer{
+  margin-top:5px;
   padding: 5px 20px;
   width: 100%;
 }

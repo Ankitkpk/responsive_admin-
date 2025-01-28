@@ -1,25 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './menu.scss';
 import { menu } from '../../data.ts';
-
+import './menu.scss'
 const Menu = () => {
   return (
-    <div className="menu">
-      {menu.map((section) => (
-        <div key={section.id} className="item">
-          <span className="title">{section.title.toUpperCase()}</span>
-          {section.listItems.map((listItem) => (
-            <Link key={listItem.id} to={listItem.url} className="listItemTitle">
-              <img src={listItem.icon} alt={`${listItem.title} Icon`} />
-              <span >{listItem.title}</span>
-            </Link>
-          ))}
-        </div>
+    <div className='menu'>
+      {menu.map((item) => (
+        <section className='menusection' key={item.id}>
+          <span className='menutitle'>{item.title.toUpperCase()}</span>
+          <ul className='menu_options'>
+            {item.listItems.map((listItem) => (
+              <li key={listItem.id}>
+                <a href={listItem.url}>
+                  <img src={listItem.icon} alt={listItem.title} />
+                  <span>{listItem.title}</span> 
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
       ))}
     </div>
   );
 };
 
 export default Menu;
-

@@ -1,0 +1,46 @@
+/* TopBox.scss */
+.topdetailsuser {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap:15px;
+    margin-bottom:4px;
+    .userdetails {
+        margin-top:10px;
+        display: flex;
+        align-items: center; 
+        gap: 1rem; /* Adds spacing between the image and the text */
+        padding: 0.5rem; /* Optional padding for better spacing inside the container */
+        border-radius: 8px; /* Optional for rounded edges */
+      
+        img {
+          width: 45px; /* Slightly larger for better visual balance */
+          height: 45px;
+          border-radius: 50%; /* Ensures circular shape */
+          object-fit: cover; /* Ensures the image maintains proper aspect ratio */
+        }
+      
+        .topdetais {
+          display: flex;
+          flex-direction: column; /* Aligns text vertically */
+          justify-content: center; /* Centers text items vertically */
+          gap: 5px; /* Adds spacing between username and email */
+      
+          span {
+            &:first-child {
+              font-weight: bold;
+              font-size: 1rem;
+              color: #fff; /* Adjust text color for contrast with the background */
+            }
+      
+            &:last-child {
+              font-size: 0.9rem;
+              color: #f0f0f0; /* Subtle color for secondary information */
+            }
+          }
+        }
+      }
+      
+    
+  }
+  
